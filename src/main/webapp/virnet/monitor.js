@@ -36,7 +36,7 @@ window.setInterval(function(){
 
 //连接发生错误的回调方法
 websocket.onerror = function(event){
-	
+
 };
 
 //连接成功建立的回调方法

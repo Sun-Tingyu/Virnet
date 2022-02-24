@@ -119,10 +119,10 @@ public class PhysicsMachinesManagement implements InformationQuery{
 			Map<String, String> map_status = new HashMap<String, String>();
 			int sflag = physicsmachineslist.get(i).getStatus();
 			if(sflag == 1) {
-				map_status.put("name", "未分配");
+				map_status.put("name", "忙碌");
 			}
 			else {
-				map_status.put("name", "可使用");
+				map_status.put("name", "空闲");
 			}
 			map_status.put("class", "");
 			physicsmachinesinfo.add(map_status);

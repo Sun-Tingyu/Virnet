@@ -476,6 +476,16 @@ function createExpDateSelectorARG(classinfo, op, father, timespan_id,value){//
 			}*/
 		})
 	}
+
+	body_content = $("#content");
+	body_content.empty();
+	createDateSelector().appendTo(body_content)
+	var option_head = $("<option></option>");
+	option_head.attr("value", 0);
+	option_head.html("请选择排课日期:");
+	option_head.appendTo(body_content);
+
+	/*
 	//ajax请求可以排课的日期
 	var option_head = $("<option></option>");
 	option_head.attr("value", 0);
@@ -501,7 +511,7 @@ function createExpDateSelectorARG(classinfo, op, father, timespan_id,value){//
 	    error : function(data){
 	    	alert("error");
 	    }
-	});
+	});*/
 }
 function add_exp_onButton(classinfo,value){
 	var op = $("#modeSelectInEdit").val();
@@ -587,14 +597,17 @@ function createARG(){
 	$("<td></td>").appendTo(title_tr);
 	title_tr.appendTo(tbody);
 	
-	var tr_expdate = $("<tr></tr>");
-	var td_expdate = $("<td class=td_expdate></td>");//谭睿雄5.2
+	var tr_expdate = $("<tr class = 'tr_arrange'></tr>");
+	var td_expdate = $("<td ></td>");//谭睿雄5.2
 	$("<th class = 'col-lg-4 col-md-4 col-sm-4 col-xs-6'>实验日期</th>").appendTo(tr_expdate);
 	//$("<input type='text' class='form-control' placeholder='请选择实验日期' id='expdate'> " ).appendTo(td_expdate);
-	createExpDateSelectorARG(classinfo, 0, td_expdate,'expTimespan1');
-	td_expdate.appendTo(tr_expdate);
-	tr_expdate.appendTo(tbody);
+	//createExpDateSelectorARG(classinfo, 0, td_expdate,'expTimespan1');
+	//td_expdate.appendTo(tr_expdate);
+	//tr_expdate.appendTo(tbody);
 	
+	$("<input type='text' class='form-control' placeholder='请选择实验日期' id='expdate'>").appendTo(td_expdate);
+	tr2.appendTo(tbody);
+
 	var tr_timespan = $("<tr></tr>");
 	var td_timespan = $("<td class = 'td_timespan'></td>");
 	$("<th class = 'col-lg-4 col-md-4 col-sm-4 col-xs-6'>实验时段</th>").appendTo(tr_timespan);
